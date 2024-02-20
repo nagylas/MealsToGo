@@ -11,6 +11,8 @@ import { RestaurantContextProvider } from "./src/services/restaurants/restaurant
 import { LocationContextProvider } from "./src/services/location/location.context";
 import { Navigation } from "./src/infrastructure/navigation";
 
+import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
+
 export default function App() {
   const [oswaldloaded] = useFonts({
     Oswald_400Regular,
@@ -27,11 +29,13 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <LocationContextProvider>
-          <RestaurantContextProvider>
-            <Navigation />
-          </RestaurantContextProvider>
-        </LocationContextProvider>
+        <FavouritesContextProvider>
+          <LocationContextProvider>
+            <RestaurantContextProvider>
+              <Navigation />
+            </RestaurantContextProvider>
+          </LocationContextProvider>
+        </FavouritesContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
