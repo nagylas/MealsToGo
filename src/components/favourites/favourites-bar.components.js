@@ -8,6 +8,7 @@ import { Text } from "../typography/text.component";
 const FavouritesWrapper = styled.View`
   padding: 10px;
 `;
+
 export const FavouritesBar = ({ favourites, onNavigate }) => {
   if (!favourites.length) {
     return null;
